@@ -4,9 +4,18 @@
         "analizypl",
         "autofmt",
         "dateutil",
+        "figsize",
+        "linestyle",
         "lxml",
         "mdates",
         "pydantic",
-        "xticks"
-    ]
+        "tablefmt",
+        "xdate",
+        "xlabel",
+        "xticks",
+        "ylabel"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+      }
 }

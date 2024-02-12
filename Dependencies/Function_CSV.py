@@ -1,6 +1,6 @@
 import csv
 
-def readCSVfile(fileName, delimiterSign=","):
+def readCSVfile(fileName: str, delimiterSign: str =","):
     with open(fileName, "r") as file:
         reader = csv.DictReader(file, delimiter=delimiterSign)
         
@@ -10,7 +10,7 @@ def readCSVfile(fileName, delimiterSign=","):
     
     return resultList
 
-def writeCSVfile(ListToWrite, fileName, delimiterSign=","):
+def writeCSVfile(ListToWrite: list, fileName: str, delimiterSign: str =","):
     
     headers = list(ListToWrite[0].keys())
     
