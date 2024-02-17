@@ -1,3 +1,25 @@
+"""
+.DESCRIPTION
+    Class to represent all information related to the particular fund results.
+    It calculates price changes in specified periods (default is 1 day) and prepares data,
+    to be passed to the class Analyzer. 
+    
+    To init the instance of the class you need to provide:
+        - URL <- url to fund's site on www.Analizy.pl to download the quotation from
+        - TimePeriodInMonths <- int number how many quotation months are needed.
+    
+.NOTES
+
+    Version:            1.0
+    Author:             Stanisław Horna
+    Mail:               stanislawhorna@outlook.com
+    GitHub Repository:  https://github.com/StanislawHornaGitHub/Investment_fund_Analyzer
+    Creation Date:      06-Feb-2024
+    ChangeLog:
+
+    Date            Who                     What
+
+"""
 from dataclasses import dataclass, field
 
 import pendulum

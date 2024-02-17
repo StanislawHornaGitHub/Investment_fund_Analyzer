@@ -1,3 +1,28 @@
+"""
+.DESCRIPTION
+    Module of:
+        - constant values required to correctly process quotation data
+        - functions related to downloading and filtering fund's quotation
+        
+    downloadFundQuotation <- downloads quotations of provided url from www.Analizy.pl
+    getFundIDfromURL <- extracts fund ID from provided url
+    getFundNameFromURL <- extracts fund name from provided url
+    getFundCategoryShortcut <- extracts fund category shortcut from provided url
+    getFundCategory <- extracts fund category name from provided url
+    filterQuotation <- filters quotation time frame
+    
+.NOTES
+
+    Version:            1.0
+    Author:             Stanisław Horna
+    Mail:               stanislawhorna@outlook.com
+    GitHub Repository:  https://github.com/StanislawHornaGitHub/Investment_fund_Analyzer
+    Creation Date:      06-Feb-2024
+    ChangeLog:
+
+    Date            Who                     What
+
+"""
 import requests
 import json
 import pendulum
@@ -49,7 +74,7 @@ def downloadFundQuotation(fundURL: str, TimePeriodInMonths: int) -> dict:
     }
 
 
-def getFundIDfromURL(fundURL) -> str:
+def getFundIDfromURL(fundURL: str) -> str:
     if not isinstance(fundURL, str):
         raise TypeError("FundURL must be a string")
 
