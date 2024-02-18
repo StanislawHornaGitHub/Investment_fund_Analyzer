@@ -37,7 +37,7 @@ from Dependencies.Function_Conversion import convertNumericToStrPlsMnsSigns
 from Dependencies.Function_DownloadFundQuotation import getFundIDfromURL
 
 
-@dataclass(kw_only=True)
+@dataclass(kw_only=False)
 class Analyzer:
     # Initialization Variables
     URLs: list[str]
@@ -226,6 +226,7 @@ class Analyzer:
             )
         )
         print("\n")
+        return None
 
     def showAnalysisPyPlot(self):
         # First of all display summary tables in console
@@ -347,3 +348,4 @@ class Analyzer:
         )
         # Display configured plots
         plt.show()
+        return None

@@ -4,12 +4,23 @@
         - constant values required to correctly process quotation data
         - functions related to downloading and filtering fund's quotation
         
-    downloadFundQuotation <- downloads quotations of provided url from www.Analizy.pl
-    getFundIDfromURL <- extracts fund ID from provided url
-    getFundNameFromURL <- extracts fund name from provided url
-    getFundCategoryShortcut <- extracts fund category shortcut from provided url
-    getFundCategory <- extracts fund category name from provided url
-    filterQuotation <- filters quotation time frame
+    downloadFundQuotation
+        downloads quotations of provided url from www.Analizy.pl
+    
+    getFundIDfromURL
+        extracts fund ID from provided url
+    
+    getFundNameFromURL
+        extracts fund name from provided url
+        
+    getFundCategoryShortcut
+        extracts fund category shortcut from provided url
+    
+    getFundCategory
+        extracts fund category name from provided url
+    
+    filterQuotation
+        filters quotation time frame
     
 .NOTES
 

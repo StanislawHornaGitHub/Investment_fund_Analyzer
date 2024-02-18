@@ -9,6 +9,7 @@
         "lxml",
         "mdates",
         "pydantic",
+        "Stanislaw",
         "tablefmt",
         "xdate",
         "xlabel",

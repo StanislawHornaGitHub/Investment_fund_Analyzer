@@ -1,10 +1,12 @@
 {
-    "FundsToCheckURLs": [
-        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/ING07/goldman-sachs-stabilnego-wzrostu",
-        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/ING02/goldman-sachs-zrownowazony",
+    "URLs": [
         "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/UNI32/generali-oszczednosciowy",
-        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/DWS05/investor-oszczednosciowy"
+        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/DWS05/investor-oszczednosciowy",
+        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/PZU40/pzu-globalny-obligacji-korporacyjnych",
+        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/PZU45/pzu-sejf",
+        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/PZU79/pzu-obligacji-krotkoterminowych",
+        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/UNI03/generali-korona-dochodowy",
+        "https://www.analizy.pl/fundusze-inwestycyjne-otwarte/ING43/goldman-sachs-japonia"
     ],
-    "AnalysisStartDate": "2024-01-01",
-    "AnalysisEndDate": "2024-01-01"
+    "TimePeriodInMonths": 12
 }

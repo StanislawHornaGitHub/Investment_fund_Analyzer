@@ -83,31 +83,43 @@ class Fund:
     def calculateDayToDayChange(self):
         self.calculateValueChange(1, self.Quotation, "Day_to_day_%")
         self.calculateValueChange(1, self.LastYearQuotation, "Day_to_day_%")
+        return None
 
     def calculateWeekToWeekChange(self):
         self.calculateValueChange(7, self.Quotation, "Week_to_week_%")
         self.calculateValueChange(7, self.LastYearQuotation, "Week_to_week_%")
+        return None
 
     def calculateMonthToMonthChange(self):
         self.calculateValueChange(30, self.Quotation ,"Month_to_month_%")
         self.calculateValueChange(30, self.LastYearQuotation ,"Month_to_month_%")
+        return None
 
     def calculateValueChange(self, period: int, source, ColumnName=None):
 
         if ColumnName == None:
             ColumnName = f"Change_{period}_Days_%"
-
-        i = len(source) - 1
-        while i >= 0:
+        # get the length of passed quotation to iterate through each of them
+        i = len(source)
+        # loop from the last one to the first one
+        while (i:= i - 1) >= 0:
+            # parse current date to datetime
             currentDate = parse(
                 source[i][analizyplAPIresponse_QuotationDate]
             )
-            j = i - 1
-            while j >= 0:
+            # Iterate starting from next quotation to find the quotation which is older than current one,
+            # within specified period
+            j = i
+            while (j:= j-1) >= 0:
+                # parse date to datetime of currently checked value
                 dateToCheck = parse(
                     source[j][analizyplAPIresponse_QuotationDate]
                 )
+                # check if currently check quotation meets the condition to be older than the main one
                 if (currentDate - dateToCheck).days >= period:
+                    # divide the main quotation by the older one to get value change in percentage
+                    # subtract 1 to get profit or loss only, multiply by 100 to get percentage and round 
+                    # after it break inner loop
                     source[i][ColumnName] = round(
                         (
                             (
@@ -130,15 +142,17 @@ class Fund:
                         3,
                     )
                     break
-                j -= 1
             else:
+                # if inner loop does not found required value set the result of calculation to 0
                 source[i][ColumnName] = 0.0
-            i -= 1
-
         return None
 
     def calculateRefundRate(self, source, destination):
+        # get the initial value from first quotation price 
         initialValue = float(source[0]["value"])
+        
+        # loop through each item in source quotation
+        # calculate refund for each quotation comparing to the initial value
         for item in source:
             destination.append(
                 {
@@ -151,6 +165,8 @@ class Fund:
         return None
 
     def getRefundRateToPlot(self) -> dict[str, pendulum.DateTime | float]:
+        # return refund rates for current and historical timeframe,
+        # prepared to be used in pyplot module
         return {
             "Current": {
                 "date": [parse(dates["date"]) for dates in self.RefundRate][:-1],
@@ -163,6 +179,8 @@ class Fund:
         }
 
     def getChangesToPlot(self) -> dict[str, pendulum.DateTime | float]:
+        # return price volatility for current and historical timeframe,
+        # prepared to be used in pyplot module
         return {
             "Current": {
                 "date": [parse(dates["date"]) for dates in self.Quotation][:-1],
