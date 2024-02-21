@@ -169,12 +169,12 @@ class Fund:
         # prepared to be used in pyplot module
         return {
             "Current": {
-                "date": [parse(dates["date"]) for dates in self.RefundRate][:-1],
-                "value": [change["RefundRate_%"] for change in self.RefundRate][:-1],
+                "date": [parse(dates["date"]) for dates in self.RefundRate],
+                "value": [change["RefundRate_%"] for change in self.RefundRate],
             },
             "Historical": {
-                "date": [parse(dates["date"]) for dates in self.LastYearRefundRate][:-1],
-                "value": [change["RefundRate_%"] for change in self.LastYearRefundRate][:-1],
+                "date": [parse(dates["date"]) for dates in self.LastYearRefundRate],
+                "value": [change["RefundRate_%"] for change in self.LastYearRefundRate],
             }
         }
 
@@ -183,11 +183,11 @@ class Fund:
         # prepared to be used in pyplot module
         return {
             "Current": {
-                "date": [parse(dates["date"]) for dates in self.Quotation][:-1],
-                "value": [change["Day_to_day_%"] for change in self.Quotation][:-1],
+                "date": [parse(dates["date"]) for dates in self.Quotation],
+                "value": [change["Day_to_day_%"] for change in self.Quotation],
             },
             "Historical": {
-                "date": [parse(dates["date"]) for dates in self.LastYearQuotation][:-1],
-                "value": [change["Day_to_day_%"] for change in self.LastYearQuotation][:-1],
+                "date": [parse(dates["date"]) for dates in self.LastYearQuotation],
+                "value": [change["Day_to_day_%"] for change in self.LastYearQuotation],
             }
         }
